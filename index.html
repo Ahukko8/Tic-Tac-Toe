@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-    </head>
-    <body>
-        <header>
-            <div class="header-container">
-                <h1 class="heading">TIC TAC TOE</h1>
-                <button class="start-btn" id="start">START</button>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container" id="homePage">
+            <h1 class="heading">TIC TAC TOE</h1>
+            <button class="start-btn" id="startButton">START</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" id="container">
+            <div class="game-board x" id="gameBoard">
+                <div class="cell x" data-cell></div>
+                <div class="cell circle" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
             </div>
-        </header>
+            <div class="win-message" id="winMessage">
+                <div data-win-message-text></div>
+                <button class="restart" id="restartButton">RESTART</button>
+            </div>
+        </div>
 
-        
-        <script src="script.js" async defer></script>
-        
+    </main>
 
-    </body>
+
+    <script src="script.js" async defer></script>
+
+
+</body>
+
 </html>
