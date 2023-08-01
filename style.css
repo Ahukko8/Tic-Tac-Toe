@@ -7,13 +7,16 @@
 :root {
     --cell-size: 100px;
     --mark-size: calc(var(--cell-size) * .9);
+    --bg-color: #221225;
+    --baord-color: #2f2b3a;
+    --border-color: #908d96;
 }
 
 body {
     padding: 0;
     margin: 0;
     font-family: 'PT Sans Narrow', sans-serif;
-    background-color: #221225;
+    background-color: var(--bg-color);
 }
 
 
@@ -66,8 +69,8 @@ body {
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
-    background-color: black;
-    border: 2px solid white;
+    background-color: var(--baord-color);
+    border: 2px solid var( --border-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,34 +83,28 @@ body {
     cursor: not-allowed;
 }
 
-.board.x .cell:hover {
-
-}
+/* .board.x .cell:hover::before {
+    background-color: lightblue;
+} */
 
 
 
 .cell.x::before,
-.cell.x::after,
-.game-board.x .cell:not(.x):not(.cirlce):hover::before,
-.game-board.x .cell:not(.x):not(.cirlce):hover::after {
+.cell.x::after {
     content: "";
     position: absolute;
     width: calc(var(--mark-size) * .15);
     height: var(--mark-size);
-    background-color: aqua;
-    
-
+    background-color: #d7a4dd;
 }
 
-.cell.x::before,
-.game-board.x .cell:not(.x):not(.cirlce):hover::before{
+.cell.x::before{
     transform: rotate(45deg);
 }
 
-.cell.x::after,
-.game-board.x .cell:not(.x):not(.cirlce):hover::after {
+.cell.x::after
+{
     transform: rotate(-45deg);
-    
 }
 
 
@@ -117,7 +114,7 @@ body {
     position: absolute;
     width: var(--mark-size);
     height: var(--mark-size);
-    background-color: aqua;
+    background-color: #d7a4dd;
     border-radius: 50%;
 
 }
@@ -125,11 +122,48 @@ body {
 .cell.circle::before {
     width: var(--mark-size);
     height: var(--mark-size);
-    background-color: aqua;
+    background-color: #d7a4dd;;
 }
 
 .cell.circle::after {
     width: calc(var(--mark-size) * .8);
     height: calc(var(--mark-size) * .8);
-    background-color: black;
+    background-color: #2f2b3a;
+}
+
+.win-message {
+    position: fixed;
+    top: 12em;
+    left: 14.2em;
+    right: o;
+    bottom: 0;
+    background-color: var(--bg-color);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: white;
+}
+
+.win-message button {
+    width: 200px;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: #d7a4dd;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #221225;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        font-size: 35px;
+    }
+    
+}
+
+.win-message.show {
+    display: flex;
 }
